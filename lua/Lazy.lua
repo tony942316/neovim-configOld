@@ -20,8 +20,21 @@ require("lazy").setup("plugins", {
     ui = { 
         wrap = "true",
         icons = {
+            cmd = " ",
+            config = "",
+            event = "",
+            ft = " ",
+            init = " ",
+            import = " ",
+            keys = " ",
+            lazy = "󰒲 ",
             loaded = "●",
             not_loaded = "○",
+            plugin = " ",
+            runtime = " ",
+            source = " ",
+            start = "",
+            task = "✔ ",
             list = {
                 "●",
                 "➜",

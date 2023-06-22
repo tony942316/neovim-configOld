@@ -1,3 +1,3 @@
-local colorscheme = "darkplus"
+local colorscheme = "rose-pine"
 
 return colorscheme

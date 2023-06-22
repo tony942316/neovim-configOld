@@ -12,6 +12,16 @@ local M = {
         },
         {
             "hrsh7th/cmp-cmdline"
+        },
+        {
+            "saadparwaiz1/cmp_luasnip"
+        },
+        {
+            "L3MON4D3/LuaSnip",
+            event = "InsertEnter",
+            dependencies = {
+                "rafamadriz/friendly-snippets"
+            }
         }
     },
     event = {
@@ -22,6 +32,8 @@ local M = {
 
 function M.config()
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    require("luasnip/loaders/from_vscode").lazy_load()
 
     local check_backspace = function()
         local col = vim.fn.col "." - 1
@@ -59,6 +71,11 @@ function M.config()
     }
 
     cmp.setup {
+        snippet = {
+            expand = function(args)
+                luasnip.lsp_expand(args.body)
+            end
+        },
         mapping = cmp.mapping.preset.insert {
             ["<A-k>"] = cmp.mapping.select_prev_item(),
             ["<A-j>"] = cmp.mapping.select_next_item(),
@@ -70,6 +87,7 @@ function M.config()
                 vim_item.kind = kind_icons[vim_item.kind]
                 vim_item.menu = ({
                     nvim_lsp = "",
+                    luasnip = "",
                     buffer = "",
                     path = "",
                     emoji = ""
@@ -79,6 +97,7 @@ function M.config()
         },
         sources = {
             { name = "nvim_lsp" },
+            { name = "luasnip" },
             { name = "buffer" },
             { name = "path" }
         },

@@ -1,7 +1,7 @@
-local M = {}
 
-M.servers = {
 
+local M = {
+    "lua_ls"
 }
 
 return M
