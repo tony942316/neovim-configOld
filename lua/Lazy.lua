@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup("plugins", {
-    install = { colorscheme = { require("plugins.ColorScheme").name } },
+    install = { colorscheme = { require("utils.ColorScheme") } },
     defaults = { lazy = true },
     ui = { 
         wrap = "true",
@@ -30,7 +30,7 @@ require("lazy").setup("plugins", {
             }
         }
     },
-    change_detection = { enabled = true },
+    change_detection = { enabled = true, notify = false },
     debug = false,
     performance = {
         rtp = {
@@ -47,3 +47,6 @@ require("lazy").setup("plugins", {
         }
     }
 })
+
+vim.cmd.colorscheme(require("utils.ColorScheme"))
+vim.cmd("TransparentEnable")

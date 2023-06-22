@@ -1,15 +1,17 @@
 -- Hint: use `:h <option>` to figure out the meaning if needed
 vim.opt.clipboard = "unnamedplus"   -- use system clipboard
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-vim.opt.mouse = "a"			        -- allow mouse
+vim.opt.mouse = "a"                 -- allow mouse
 
 -- Tab
-vim.opt.tabstop = 4			        -- visual spaces per TAB
-vim.opt.softtabstop = 4			    -- actual spaces per TAB
-vim.opt.shiftwidth = 4			    -- insert spaces per TAB
-vim.opt.expandtab = true		    -- look data I'm a real Space
+vim.opt.tabstop = 4                 -- visual spaces per TAB
+vim.opt.softtabstop = 4             -- actual spaces per TAB
+vim.opt.shiftwidth = 4              -- insert spaces per TAB
+vim.opt.expandtab = true            -- look data I'm a real Space
 vim.opt.showtabline = 0             -- always show tabs
 vim.opt.smartindent = true          -- ai block-chain powered indenting
+vim.opt.list = true                 -- edit invisible chars
+vim.opt.listchars:append "tab:\\t"  -- spot those pesky tabs
 
 -- UI
 vim.opt.number = true               -- turn on line numbers
@@ -26,6 +28,8 @@ vim.opt.wrap = false                -- word wrap is dumb
 vim.opt.scrolloff = 8               -- keep 8 lines above and below the cusor
 vim.opt.sidescrolloff = 8           -- same for horizontal
 vim.opt.fillchars.eob = " "         -- ~ for end of buffer
+vim.opt.ruler = false               -- lualine takes care of this
+vim.opt.colorcolumn = "80"          -- horizontal scrolling is rude
 
 -- Searching
 vim.opt.incsearch = true            -- partial search while typing

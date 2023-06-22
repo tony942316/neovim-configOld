@@ -75,3 +75,12 @@ keymapT("jk", "<C-\\><C-N>")
 --------------
 
 keymapN("<leader>e", ":NvimTreeToggle<CR>")
+
+---------------
+-- TELESCOPE --
+---------------
+
+keymapN("<leader>ff", ":Telescope find_files<CR>")
+keymapN("<leader>ft", ":Telescope live_grep<CR>")
+keymapN("<leader>fp", ":Telescope projects<CR>")
+keymapN("<leader>fb", ":Telescope buffers<CR>")
