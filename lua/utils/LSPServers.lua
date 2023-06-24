@@ -1,7 +1,9 @@
 
 
 local M = {
-    "lua_ls"
+    "lua_ls",
+    "clangd",
+    "cmake"
 }
 
 return M
