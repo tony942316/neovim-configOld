@@ -25,5 +25,7 @@ cp /home/$username/.cargo/bin/tree-sitter-cli \
 git clone https://github.com/tony942316/neovim-config.git \
     /home/$username/.config/nvim
 
+chown -R $username /home/$username/
+
 echo DONE
 rm ubuntuinstall2.sh

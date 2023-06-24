@@ -1,6 +1,5 @@
 local M = {
     "neovim/nvim-lspconfig",
-    lazy = true,
     dependencies = {
         {
             "hrsh7th/cmp-nvim-lsp"
