@@ -22,6 +22,7 @@ apt install -y clang-tidy
 apt install -y nodejs
 apt install -y npm
 apt install -y fuse
+apt install -y ripgrep
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 mv nvim.appimage /usr/bin/nvim
