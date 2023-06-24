@@ -11,18 +11,22 @@ apt install -y make
 apt install -y zip
 apt install -y unzip
 apt install -y curl
+apt install -y tree
 apt install -y gcc
 apt install -y cmake
 apt install -y python3
 apt install -y python3-venv
+apt install -y python3-pip
+pip install pynvim
+apt install -y nodejs
+apt install -y npm
+npm i -g neovim
+apt install -y cargo
 apt install -y ripgrep
 apt install -y clang
 apt install -y clangd
 apt install -y clang-tidy
-apt install -y nodejs
-apt install -y npm
 apt install -y fuse
-apt install -y ripgrep
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 mv nvim.appimage /usr/bin/nvim
