@@ -5,7 +5,7 @@ sudo apt install -y build-essential git make zip unzip curl tree gcc cmake \
     clangd clang-tidy fuse
 
 pip install pynvim
-npm i -g neovim
+sudo npm i -g neovim
 
 mkdir -p ~/.local/bin
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -13,8 +13,10 @@ chmod +x nvim.appimage
 mv nvim.appimage ~/.local/bin/nvim
 
 cargo install tree-sitter-cli
-cp ~/.cargo/bin/tree-sitter-cli \
+cp ~/.cargo/bin/tree-sitter \
     ~/.local/bin/tree-sitter
+
+source ~/.profile
 
 git clone https://github.com/tony942316/neovim-config.git \
     ~/.config/nvim
