@@ -19,6 +19,7 @@ chmod +x nvim.appimage
 mv nvim.appimage /usr/bin/nvim
 
 cargo install tree-sitter-cli
+mkdir -p /home/$username/.local/bin/
 cp /home/$username/.cargo/bin/tree-sitter-cli \
     /home/$username/.local/bin/tree-sitter-cli
 
