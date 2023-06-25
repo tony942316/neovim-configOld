@@ -9,8 +9,7 @@ curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/ub
 
 ### Fix Installer XD
 ```sh
-chmod +x ubuntuinstall2.sh \
-sed -i -e 's/\r$//' ubuntuinstall2
+chmod +x ubuntuinstall2.sh && sed -i -e 's/\r$//' ubuntuinstall2.sh
 ```
 
 ### Install Dependencies
