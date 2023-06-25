@@ -4,12 +4,12 @@
 
 ### Download Installer
 ```sh
-curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/ubuntuinstall2.sh
+curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/ubuntuinstall.sh
 ```
 
 ### Fix Installer XD
 ```sh
-chmod +x ubuntuinstall2.sh && sed -i -e 's/\r$//' ubuntuinstall2.sh
+chmod +x ubuntuinstall.sh && sed -i -e 's/\r$//' ubuntuinstall.sh
 ```
 
 ### Install Dependencies

@@ -1,33 +1,24 @@
 #!/bin/bash
 
-if [ `whoami` != root ]; then
-    echo Please Run As Sudo
-    exit
-fi
+sudo apt install -y build-essential git make zip unzip curl tree gcc cmake \
+    python3 python3-venv python3-pip nodejs npm cargo ripgrep clang \
+    clangd clang-tidy fuse
 
-apt install -y build-essential
-apt install -y git
-apt install -y make
-apt install -y zip
-apt install -y unzip
-apt install -y curl
-apt install -y tree
-apt install -y gcc
-apt install -y cmake
-apt install -y python3
-apt install -y python3-venv
-apt install -y python3-pip
 pip install pynvim
-apt install -y nodejs
-apt install -y npm
-npm i -g neovim
-apt install -y cargo
-apt install -y ripgrep
-apt install -y clang
-apt install -y clangd
-apt install -y clang-tidy
-apt install -y fuse
+sudo npm i -g neovim
+
+mkdir -p ~/.local/bin
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
-mv nvim.appimage /usr/bin/nvim
-git clone https://github.com/tony942316/neovim-config.git ~/.config/nvim
+mv nvim.appimage ~/.local/bin/nvim
+
+cargo install tree-sitter-cli
+cp ~/.cargo/bin/tree-sitter \
+    ~/.local/bin/tree-sitter
+
+git clone https://github.com/tony942316/neovim-config.git \
+    ~/.config/nvim
+
+echo DONE
+echo Please Restart System
+rm ubuntuinstall.sh
