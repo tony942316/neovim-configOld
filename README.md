@@ -1,30 +1,47 @@
 # My Personal Neovim Configuration
 
-## Ubuntu
-
-### Download Installer
-```sh
-curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/ubuntuinstall.sh
-```
-
-### Fix Installer XD
-```sh
-chmod +x ubuntuinstall.sh && sed -i -e 's/\r$//' ubuntuinstall.sh
-```
-
-### Install Dependencies
-```sh
-
-```
+## Platform Agnostic
 
 ### Clone The Repo
 ```sh
 git clone https://github.com/tony942316/neovim-config.git ~/.config/nvim
 ```
-
-### Download Latest Neovim Release
+### Solve Dependency Issues
 ```sh
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage \
-chmod u+x nvim.appimage \
+:checkhealth
+```
+
+## Ubuntu
+
+### Option 1) Download And Run The Installer
+```sh
+curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/ubuntuinstall.sh &&
+chmod +x ubuntuinstall.sh &&
+./ubuntuinstall.sh
+```
+
+### Option 2) Clone The Repo
+First clone the repo
+```sh
+git clone https://github.com/tony942316/neovim-config.git ~/.config/nvim
+```
+Second download latest version of neovim (Using appimage)
+Alternatives: https://github.com/neovim/neovim/wiki/Installing-Neovim
+```sh
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage &&
+chmod u+x nvim.appimage &&
 sudo mv /usr/bin/nvim
 ```
+Third download dependencies
+```sh
+sudo apt install -y build-essential git make zip unzip curl tree gcc cmake \
+    python3 python3-venv python3-pip nodejs npm cargo ripgrep clang \
+    clangd clang-tidy fuse &&
+sudo npm i -g neovim &&
+pip install pynvim $$
+cargo install tree-sitter-cli &&
+cp ~/.cargo/bin/tree-sitter /usr/bin/tree-sitter
+```
+
+## Arch/Mac/Windows
+TBD
