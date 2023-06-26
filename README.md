@@ -1,6 +1,11 @@
 # My Personal Neovim Configuration
 
-## Platform Agnostic
+# Table Of Contents
+1. [Platform Agnostic](#agnostic)
+2. [Ubuntu](#ubuntu)
+3. [Arch](#arch)
+
+## Platform Agnostic <a name="agnostic"></a>
 
 ### Clone The Repo
 ```sh
@@ -11,7 +16,7 @@ git clone https://github.com/tony942316/neovim-config.git ~/.config/nvim
 :checkhealth
 ```
 
-## Ubuntu
+## Ubuntu <a name="ubuntu"></a>
 
 ### Option 1) Download And Run The Installer
 ```sh
@@ -43,5 +48,30 @@ cargo install tree-sitter-cli &&
 cp ~/.cargo/bin/tree-sitter /usr/bin/tree-sitter
 ```
 
-## Arch/Mac/Windows
+## Arch <a name="arch"></a>
+
+### Option 1) Download And Run The Installer
+```sh
+curl -LO https://github.com/tony942316/neovim-config/releases/latest/download/archinstall.sh &&
+chmod +x archinstall.sh &&
+./archinstall.sh
+```
+
+### Option 2) Clone The Repo
+First clone the repo
+```sh
+git clone https://github.com/tony942316/neovim-config.git \
+    ~/.config/nvim
+```
+
+Second download dependencies
+```sh
+sudo pacman -Syu --noconfirm git zip unzip wget curl tree \
+    make cmake gcc clang python python-pynvim \
+    nodejs npm rust ripgrep neovim &&
+sudo npm install -g npm@latest &&
+sudo npm i -g neovim
+```
+
+## Mac/Windows
 TBD
