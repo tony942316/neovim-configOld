@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S git zip unzip wget curl tree \
+sudo pacman -Syu git zip unzip wget curl tree \
     make cmake gcc clang python python-pynvim \
     nodejs npm rust ripgrep neovim
 
